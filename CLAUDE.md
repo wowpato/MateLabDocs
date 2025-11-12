@@ -2,6 +2,38 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Tipo de Repositorio
+
+Este es un **repositorio de documentación** (MateLabDocs) que contiene las guías de diseño, marca y estilo para el ecosistema MateLab. No contiene código fuente ejecutable.
+
+### Estructura del Repositorio
+
+```
+matelab/
+├── CLAUDE.md                              # Este archivo
+└── biblia/                                # Documentación de referencia
+    ├── MATELAB_DESIGN_SYSTEM.md          # Sistema de diseño visual completo
+    ├── MATELAB_BRAND_TRAINING.md         # Información de marca y comunicación
+    └── MATELAB_STYLE_GUIDE_FOR_AI.md     # Guía de implementación para IA
+```
+
+### Comandos Comunes
+
+Como este es un repositorio de documentación sin código, los únicos comandos relevantes son de Git:
+
+```bash
+# Ver cambios
+git status
+git diff
+
+# Agregar y commitear documentación
+git add .
+git commit -m "Actualizar documentación de [tema]"
+
+# Pushear cambios
+git push
+```
+
 ## Proyecto MateLab
 
 **MateLab** - Sistema SaaS modular (Yerba) para gestión empresarial de comercios uruguayos.

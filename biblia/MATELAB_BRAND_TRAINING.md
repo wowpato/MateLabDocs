@@ -225,18 +225,39 @@ Sistema SaaS modular para gestión empresarial completo.
 
 ### Módulos de Yerba
 
-#### 1. Yerba Stock (Gestión de Depósito)
+#### 1. Yerba Products (Catálogo de Productos) - BASE
+**Funcionalidad:**
+- Gestión completa del catálogo de productos
+- Control de precios de venta y costos
+- Categorías y etiquetas organizacionales
+- Códigos SKU y códigos de barras
+- Imágenes y descripciones de productos
+- Búsqueda y filtros avanzados
+
+**Propuesta de valor:**
+"Organizá y gestioná todo tu catálogo de productos desde un solo lugar"
+
+**Nota técnica:** Este es el módulo base. Todos los demás módulos dependen de Products.
+
+---
+
+#### 2. Yerba Stock (Gestión de Depósito)
 **Funcionalidad:**
 - Control total del inventario en tiempo real
 - Seguimiento de entradas y salidas
 - Stock mínimo y alertas automáticas
 - Gestión de múltiples depósitos desde una plataforma
 - Control de ubicaciones de mercadería
+- Historial completo de movimientos
 
 **Propuesta de valor:**
 "Control total de tu inventario en tiempo real"
 
-#### 2. Yerba Sales (Ventas)
+**Requiere:** Yerba Products
+
+---
+
+#### 3. Yerba Sales (Ventas)
 **Funcionalidad:**
 - Sistema de ventas rápido e intuitivo
 - Gestión de documentos integrada
@@ -247,29 +268,58 @@ Sistema SaaS modular para gestión empresarial completo.
 **Propuesta de valor:**
 "Sistema de ventas rápido e intuitivo"
 
-#### 3. Yerba Buy (Compras)
+**Requiere:** Yerba Products, Yerba Stock
+
+---
+
+#### 4. Yerba Buy (Compras)
 **Funcionalidad:**
 - Gestión de órdenes de compra
 - Control de proveedores
 - Gestión de costos
-- Integración con Stock
+- Recepción de mercadería
+- Integración automática con Stock (aumenta inventario)
 
-#### 4. Yerbera (Analytics/Reportes)
+**Propuesta de valor:**
+"Gestioná tus compras y proveedores de forma ordenada"
+
+**Requiere:** Yerba Products, Yerba Stock
+
+---
+
+#### 5. Yerbera (Analytics/Reportes)
 **Funcionalidad:**
 - Reportes claros y visuales
 - Análisis de ventas
 - Productos más vendidos
-- Rentabilidad
+- Rentabilidad y márgenes
 - Tendencias del negocio
+- Exportación a Excel/PDF
 
 **Propuesta de valor:**
 "Tomá decisiones informadas con reportes claros y visuales"
 
-#### 5. Yerba Call (Call Center)
+**Requiere:** Yerba Products
+**Opcional:** Yerba Sales, Yerba Buy, Yerba Stock (desbloquea más funcionalidades)
+
+---
+
+#### 6. Yerba Call (Call Center y CRM)
 **Funcionalidad:**
-- Gestión de llamadas y consultas
+- Gestión completa de clientes (CRM)
+- Historial de llamadas y consultas
 - Seguimiento de clientes
+- Sistema de tickets de soporte
 - Registro de interacciones
+- Integración con historial de compras (si tenés Sales)
+
+**Propuesta de valor:**
+"Mejorá la atención a tus clientes con un CRM simple y efectivo"
+
+**Requiere:** Yerba Products
+**Opcional:** Yerba Sales (para ver historial de compras del cliente)
+
+---
 
 ### Características Transversales
 

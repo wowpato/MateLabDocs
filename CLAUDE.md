@@ -14,7 +14,8 @@ matelab/
 └── biblia/                                # Documentación de referencia
     ├── MATELAB_DESIGN_SYSTEM.md          # Sistema de diseño visual completo
     ├── MATELAB_BRAND_TRAINING.md         # Información de marca y comunicación
-    └── MATELAB_STYLE_GUIDE_FOR_AI.md     # Guía de implementación para IA
+    ├── MATELAB_STYLE_GUIDE_FOR_AI.md     # Guía de implementación para IA
+    └── YERBA_ARQUITECTURA_TECNICA.md     # Arquitectura técnica del sistema
 ```
 
 ### Comandos Comunes
@@ -53,13 +54,45 @@ git push
 - **Cebador** - Panel de administración/orquestador
 - **Yerbera** - Analytics/Reportes
 
-### Módulos de Yerba
+### Módulos de Yerba (Plugins)
 
-1. **Yerba Stock** - Control de inventario y depósitos
-2. **Yerba Sales** - Sistema de ventas y punto de venta
-3. **Yerba Buy** - Gestión de compras y proveedores
-4. **Yerbera** - Analytics y reportes visuales
-5. **Yerba Call** - Call center y gestión de clientes
+#### Plugins Core (Base)
+1. **Yerba Products** - Catálogo de productos (PLUGIN BASE - OBLIGATORIO)
+   - Sin dependencias
+   - Todos los demás plugins dependen de este
+
+#### Plugins Funcionales
+2. **Yerba Stock** - Control de inventario y depósitos
+   - **Depende de:** Products
+3. **Yerba Sales** - Sistema de ventas y punto de venta
+   - **Depende de:** Products, Stock
+4. **Yerba Buy** - Gestión de compras y proveedores
+   - **Depende de:** Products, Stock
+5. **Yerbera** - Analytics y reportes visuales
+   - **Depende de:** Products (opcional: Sales, Buy, Stock)
+6. **Yerba Call** - Call center y gestión de clientes (CRM)
+   - **Depende de:** Products (opcional: Sales)
+
+### Grafo de Dependencias
+
+```
+Yerba Products (base)
+      │
+      ├─────────────┬─────────────┬─────────────┐
+      │             │             │             │
+      ▼             ▼             ▼             ▼
+ Yerba Stock   Yerba Call    Yerbera      (futuros)
+      │             │         (opcional: sales, buy, stock)
+      ├─────┬───────┘
+      │     │
+      ▼     ▼
+ Yerba Sales
+      │
+      ▼
+ Yerba Buy
+```
+
+**Regla importante:** Un plugin NO puede activarse si sus dependencias no están activas. El sistema valida automáticamente estas dependencias antes de la activación.
 
 ## Filosofía de Diseño y Marca
 
@@ -409,6 +442,7 @@ Damian
 - `biblia/MATELAB_DESIGN_SYSTEM.md` - Sistema de diseño completo con todas las variables CSS
 - `biblia/MATELAB_BRAND_TRAINING.md` - Información de marca, tono, valores, comunicación
 - `biblia/MATELAB_STYLE_GUIDE_FOR_AI.md` - Guía detallada de implementación CSS/HTML
+- `biblia/YERBA_ARQUITECTURA_TECNICA.md` - Arquitectura técnica completa del sistema, stack tecnológico, plugins y dependencias
 
 ## Audiencia Objetivo
 

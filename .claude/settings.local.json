@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAgregar CLAUDE.md con documentación completa del proyecto\n\n- Sistema de diseño con variables CSS y componentes UI\n- Arquitectura del ecosistema de productos (Yerba, Bombilla, Termo, etc.)\n- Filosofía de diseño y principios de accesibilidad\n- Guía de tono de voz y comunicación con usuarios\n- Paleta de colores, tipografía y sistema de espaciado\n- Reglas de implementación y anti-patrones\n- Checklist pre-commit y proceso de desarrollo\n- Ejemplos de comunicación y mensajes tipo\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)",
+      "Bash(find:*)",
+      "Bash(git commit:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
